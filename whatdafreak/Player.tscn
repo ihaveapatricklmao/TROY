@@ -61,7 +61,7 @@ scale = Vector2(0.244029, 0.117176)
 texture = ExtResource("2_dkq7o")
 
 [node name="JumpTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 0.12
 autostart = true
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]

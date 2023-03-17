@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name PlayerClass
 
 
+@onready var JumpTimer = $JumpTimer
 # cam vars
 @onready var Head = $Head
 var min_cam_angle : float = -90.0
@@ -11,7 +12,7 @@ var sense = 8.0
 
 # stat vars
 const speed = 25.0
-var jumps_left = 1
+var jumps_left = 2
 const jump = 15.5
 const gravity = 30.0
 var hp = 100
@@ -22,9 +23,12 @@ const max_armour = 100
 
 func _physics_process(delta):
 	# jump
-	if Input.is_action_just_pressed("ui_accept") and jumps_left != 0:
-		velocity.y = jump
-		jumps_left -= 2
+	if Input.is_action_just_pressed("ui_accept"):
+		if jumps_left != 0:
+			velocity.y = jump
+			jumps_left -= 1
+			
+		
 	
 	var input_dir = Input.get_vector("moveleft", "moveright", "moveup", "movedown")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -35,8 +39,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	
-	if is_on_floor():
-		jumps_left = 2
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta
@@ -60,3 +62,9 @@ func _input(event):
 		mouse_delta = event.relative
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_jump_timer_timeout():
+	print("can double jump now")
+	if is_on_floor():
+		jumps_left = 2

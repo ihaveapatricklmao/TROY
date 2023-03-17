@@ -22,6 +22,7 @@ class_name EnemyBase
 @export_group("PHYSICS STUFF")
 @export_enum("Grounded","Floating") var movement_type: String
 @export var speed : float
+@export var jump_power : int
 @export var gravity : float
 
 # ABILITIES
@@ -35,16 +36,18 @@ func _ready():
 	current_target = Player
 
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 	
-	velocity.y -= gravity * delta
-	Agent.set_target_position(current_target.transform.origin)
+	Agent.set_target_position(current_target.global_position)
 	Agent.get_final_position()
 	var next_path = Agent.get_next_path_position()
 	
 	global_rotation_degrees = current_target.global_rotation_degrees
 	
 	if Agent.is_target_reachable() == false:
-		print("target is not reachable!")
+		if is_on_floor() == true:
+			velocity.y += jump_power * delta
 	
 	
 	velocity = (next_path - global_position).normalized() * speed*100 * delta

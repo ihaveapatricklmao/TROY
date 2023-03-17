@@ -40,17 +40,28 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Troy" type="Sprite2D" parent="."]
+[node name="Troy3" type="Sprite2D" parent="Control"]
+position = Vector2(96, 305)
+scale = Vector2(0.155244, 0.145923)
+texture = ExtResource("2_dkq7o")
+
+[node name="Troy2" type="Sprite2D" parent="Control"]
+position = Vector2(77, 197)
+scale = Vector2(0.123856, 0.0285472)
+texture = ExtResource("2_dkq7o")
+
+[node name="Troy" type="Sprite2D" parent="Control"]
 position = Vector2(74.125, 80)
 scale = Vector2(0.0911215, 0.133047)
 texture = ExtResource("2_dkq7o")
 
-[node name="Troy" type="Sprite2D" parent="Troy"]
-position = Vector2(-302.749, 897.735)
-scale = Vector2(0.155244, 0.145923)
+[node name="Troy4" type="Sprite2D" parent="Control"]
+position = Vector2(1022, 548)
+scale = Vector2(0.244029, 0.117176)
 texture = ExtResource("2_dkq7o")
 
-[node name="Troy2" type="Sprite2D" parent="."]
-position = Vector2(96, 305)
-scale = Vector2(0.155244, 0.145923)
-texture = ExtResource("2_dkq7o")
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]

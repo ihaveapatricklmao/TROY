@@ -6,6 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0sbx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef13g"]
+albedo_color = Color(0.686275, 0.113725, 0.0509804, 1)
 albedo_texture = ExtResource("2_ay66m")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qncsk"]
@@ -22,6 +23,7 @@ max_hp = 10
 attack_type = "Attack2"
 movement_type = "Grounded"
 speed = 5.2
+jump_power = 25
 gravity = 125.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

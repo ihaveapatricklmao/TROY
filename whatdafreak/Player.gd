@@ -34,17 +34,17 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("moveleft", "moveright", "moveup", "movedown")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if Input.is_action_just_pressed("dash"):
-			exp=30
-		velocity.x = direction.x * speed*exp
-		velocity.z = direction.z * speed*exp
-		exp=1
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	if Input.is_action_just_pressed("dash"):
-		print("jejejej")
-	
+		exp = 30
+		velocity.x = direction.x *speed*exp
+		velocity.z = direction.z *speed*exp
+	else:
+		exp = 1
 	if !is_on_floor():
 		velocity.y -= gravity * delta
 	

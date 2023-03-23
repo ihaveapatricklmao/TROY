@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwroi42luyie5"]
+[gd_scene load_steps=8 format=3 uid="uid://dwroi42luyie5"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_qqs3u"]
-[ext_resource type="Texture2D" uid="uid://dokat866hquct" path="res://troy.PNG" id="2_dkq7o"]
+[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_dyvyu"]
+[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.png" id="3_jx0j4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wj5b"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnj5q"]
-albedo_texture = ExtResource("2_dkq7o")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b6gg"]
+albedo_texture = ExtResource("2_dyvyu")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_f46v0"]
 shading_mode = 0
@@ -31,7 +32,7 @@ fov = 90.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.04552, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_qnj5q")
+material_override = SubResource("StandardMaterial3D_1b6gg")
 mesh = SubResource("CapsuleMesh_k15i1")
 
 [node name="Control" type="Control" parent="."]
@@ -40,25 +41,10 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Troy3" type="Sprite2D" parent="Control"]
-position = Vector2(96, 305)
-scale = Vector2(0.155244, 0.145923)
-texture = ExtResource("2_dkq7o")
-
-[node name="Troy2" type="Sprite2D" parent="Control"]
-position = Vector2(77, 197)
-scale = Vector2(0.123856, 0.0285472)
-texture = ExtResource("2_dkq7o")
-
 [node name="Troy" type="Sprite2D" parent="Control"]
-position = Vector2(74.125, 80)
-scale = Vector2(0.0911215, 0.133047)
-texture = ExtResource("2_dkq7o")
-
-[node name="Troy4" type="Sprite2D" parent="Control"]
-position = Vector2(1022, 548)
-scale = Vector2(0.244029, 0.117176)
-texture = ExtResource("2_dkq7o")
+position = Vector2(90, 74)
+scale = Vector2(0.223636, 0.251724)
+texture = ExtResource("3_jx0j4")
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.12

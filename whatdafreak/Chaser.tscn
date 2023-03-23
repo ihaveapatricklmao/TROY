@@ -1,13 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://6i0dupevpyv5"]
 
 [ext_resource type="Script" path="res://Chaser.gd" id="1_jh4n3"]
-[ext_resource type="Texture2D" uid="uid://dokat866hquct" path="res://troy.PNG" id="2_ay66m"]
+[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_crrws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0sbx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef13g"]
-albedo_color = Color(0.686275, 0.113725, 0.0509804, 1)
-albedo_texture = ExtResource("2_ay66m")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivco5"]
+albedo_texture = ExtResource("2_crrws")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qncsk"]
 shading_mode = 0
@@ -34,7 +33,7 @@ shape = SubResource("BoxShape3D_a0sbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.04552, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_ef13g")
+material_override = SubResource("StandardMaterial3D_ivco5")
 mesh = SubResource("CapsuleMesh_golbd")
 
 [node name="Agent" type="NavigationAgent3D" parent="."]

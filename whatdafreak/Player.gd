@@ -39,7 +39,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-	
+		
 	if Input.is_action_just_pressed("dash"):
 		exp = 30
 		velocity.x = direction.x *speed*exp

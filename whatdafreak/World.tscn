@@ -167,5 +167,5 @@ texture = ExtResource("4_7wfw0")
 
 [node name="Sprite3D4" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.57403, -7.56336, -12.2483)
-billboard = 1
+billboard = 2
 texture = ExtResource("6_eggmi")

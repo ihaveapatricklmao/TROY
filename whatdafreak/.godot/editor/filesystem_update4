@@ -1,4 +1,3 @@
-res://Chaser.tscn
-res://Chaser.gd
-res://Player.tscn
 res://World.tscn
+res://Player.tscn
+res://Chaser.tscn

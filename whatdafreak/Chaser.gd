@@ -16,7 +16,7 @@ class_name EnemyBase
 
 # ATTACK VARS
 @export_group("ATTACK STUFF")
-@export_enum("Attack1","Attack2","Attack3","Attack4") var attack_type: String
+@export_enum("Attack1","Attack2","Attack3","Attack4") var attack_type : String
 
 # PHYSICS VAR
 @export_group("PHYSICS STUFF")

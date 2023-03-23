@@ -19,7 +19,7 @@ var hp = 100
 const max_hp = 150
 var armour = 0
 const max_armour = 100
-var exp=1 #speed multiplier for dashes
+var dash_power = 1 #speed multiplier for dashes
 
 
 func _physics_process(delta):
@@ -41,11 +41,11 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, speed)
 		
 	if Input.is_action_just_pressed("dash"):
-		exp = 30
-		velocity.x = direction.x *speed*exp
-		velocity.z = direction.z *speed*exp
+		dash_power = 30
+		velocity.x = direction.x *speed*dash_power
+		velocity.z = direction.z *speed*dash_power
 	else:
-		exp = 1
+		dash_power = 1
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta

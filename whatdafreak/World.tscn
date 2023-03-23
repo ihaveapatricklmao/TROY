@@ -111,7 +111,7 @@ transform = Transform3D(-13.4717, 0, 0, 0, 1, -8.67656e-08, 0, 1.67916e-06, 19.0
 shape = SubResource("BoxShape3D_if8wj")
 
 [node name="Chaser" parent="NavigationRegion3D" instance=ExtResource("2_f1mby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6479, 24.4121, -8.27995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8531, -7.13329, -8.27995)
 
 [node name="OBS" type="CharacterBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 9.27068, 0, -6.92482, 0)
@@ -127,7 +127,7 @@ transform = Transform3D(1, 0, 0, 0, 5.62438, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_g8jni")
 
 [node name="Chaser2" parent="NavigationRegion3D" instance=ExtResource("2_f1mby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.258648, 24.4121, -8.27995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4638, -7.13329, -8.27995)
 
 [node name="SLOPE" type="CharacterBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0275126, 0)

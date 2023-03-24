@@ -5,6 +5,7 @@ class_name PlayerClass
 @onready var JumpTimer = $JumpTimer
 # cam vars
 @onready var Head = $Head
+@onready var Cam = $Head/Camera3D
 var min_cam_angle : float = -90.0
 var max_cam_angle : float = 90.0
 var mouse_delta = Vector2()

@@ -6,6 +6,8 @@ class_name PlayerClass
 # cam vars
 @onready var Head = $Head
 @onready var Cam = $Head/Camera3D
+var cam_tilt_power = 1
+
 var min_cam_angle : float = -90.0
 var max_cam_angle : float = 90.0
 var mouse_delta = Vector2()
@@ -40,9 +42,23 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-		
+	
+	if Input.is_action_pressed("moveleft"):
+		Cam.rotate_z(deg_to_rad(cam_tilt_power))
+	if Input.is_action_pressed("moveright"):
+		Cam.rotate_z(deg_to_rad(-cam_tilt_power))
+	
+	if not Input.is_action_pressed("moveleft"):
+		if Cam.rotation.z > 0:
+			Cam.rotate_z(deg_to_rad(-cam_tilt_power * 0.5))
+	if not Input.is_action_pressed("moveright"):
+		if Cam.rotation.z < 0:
+			Cam.rotate_z(deg_to_rad(cam_tilt_power * 0.5))
+	
+	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
+	
 	if Input.is_action_just_pressed("dash"):
-		dash_power = 30
+		dash_power = 15
 		velocity.x = direction.x *speed*dash_power
 		velocity.z = direction.z *speed*dash_power
 	else:

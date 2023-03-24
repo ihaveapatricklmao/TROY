@@ -2,3 +2,4 @@ res://Player.tscn
 res://Player.gd
 res://World.tscn
 res://Chaser.tscn
+res://Chaser.gd

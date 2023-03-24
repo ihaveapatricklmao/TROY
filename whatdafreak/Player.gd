@@ -43,6 +43,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	
+	# cam tilt checks 
+	
 	if Input.is_action_pressed("moveleft"):
 		Cam.rotate_z(deg_to_rad(cam_tilt_power))
 	if Input.is_action_pressed("moveright"):
@@ -54,8 +56,10 @@ func _physics_process(delta):
 	if not Input.is_action_pressed("moveright"):
 		if Cam.rotation.z < 0:
 			Cam.rotate_z(deg_to_rad(cam_tilt_power * 0.5))
-	
+
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
+
+	# dash 
 	
 	if Input.is_action_just_pressed("dash"):
 		dash_power = 15

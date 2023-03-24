@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_qqs3u"]
 [ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_dyvyu"]
-[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.PNG" id="3_jx0j4"]
+[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.png" id="3_jx0j4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wj5b"]
 

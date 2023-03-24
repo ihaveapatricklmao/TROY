@@ -46,6 +46,11 @@ position = Vector2(90, 74)
 scale = Vector2(0.223636, 0.251724)
 texture = ExtResource("3_jx0j4")
 
+[node name="Troy2" type="Sprite2D" parent="Control"]
+position = Vector2(222, 75)
+scale = Vector2(0.223636, 0.251724)
+texture = ExtResource("3_jx0j4")
+
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.12
 autostart = true

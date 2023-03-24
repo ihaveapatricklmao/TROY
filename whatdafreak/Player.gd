@@ -6,7 +6,7 @@ class_name PlayerClass
 # cam vars
 @onready var Head = $Head
 @onready var Cam = $Head/Camera3D
-var cam_tilt_power = 1
+var cam_tilt_power = 1.3
 
 var min_cam_angle : float = -90.0
 var max_cam_angle : float = 90.0

@@ -87,7 +87,7 @@ directional_shadow_max_distance = 107.0
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_et41b")
 
-[node name="GROUND" type="CharacterBody3D" parent="NavigationRegion3D"]
+[node name="GROUND" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(5.28579, 0, 0, 0, 1, 0, 0, 0, 2.72571, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/GROUND"]
@@ -100,7 +100,7 @@ skeleton = NodePath("../../..")
 transform = Transform3D(-13.4717, 0, 0, 0, 1, -8.67656e-08, 0, 1.67916e-06, 19.063, 0, -10.1205, 0)
 shape = SubResource("BoxShape3D_if8wj")
 
-[node name="OBS" type="CharacterBody3D" parent="NavigationRegion3D"]
+[node name="OBS" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 9.27068, 0, -6.92482, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/OBS"]
@@ -113,7 +113,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 5.62438, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_g8jni")
 
-[node name="SLOPE" type="CharacterBody3D" parent="NavigationRegion3D"]
+[node name="SLOPE" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0275126, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/SLOPE"]

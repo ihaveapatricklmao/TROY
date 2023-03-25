@@ -141,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75887, -6.29319, -6.49662)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0193, -7.17525, -7.65389)
 
 [node name="Deathbox" parent="NavigationRegion3D" instance=ExtResource("6_yv76n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -94.8884, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.8028, 0)
 
 [node name="SendPoint" parent="NavigationRegion3D" instance=ExtResource("6_ixgfo")]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b74odrsbe3qxy"]
+[gd_scene load_steps=26 format=3 uid="uid://b74odrsbe3qxy"]
 
 [ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://textures/troytrexture.PNG" id="1_s5ilx"]
 [ext_resource type="Texture2D" uid="uid://060qx2psxl2h" path="res://textures/icon.svg" id="2_h8cor"]
@@ -77,15 +77,6 @@ albedo_texture = ExtResource("1_s5ilx")
 material = SubResource("StandardMaterial3D_8jgg0")
 subdivide_width = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4615"]
-albedo_texture = ExtResource("1_s5ilx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_662n2"]
-albedo_texture = ExtResource("1_s5ilx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1kmj"]
-albedo_texture = ExtResource("1_s5ilx")
-
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -153,22 +144,22 @@ transform = Transform3D(1, 0, 0, 0, 7.33646, 0, 0, 0, 13.8407, -32.6405, 4.51784
 material_override = SubResource("StandardMaterial3D_2heky")
 mesh = SubResource("BoxMesh_oxu04")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-0.999832, 0, 0.0183423, 0, 1, 0, -0.0183423, 0, -0.999832, 0, 0, 28.9211)
-material_override = SubResource("StandardMaterial3D_f4615")
-texture = ExtResource("5_qam81")
-
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(-0.999832, 0, 0.0183423, 0, 1, 0, -0.0183423, 0, -0.999832, -12.7728, 0, 28.9211)
-material_override = SubResource("StandardMaterial3D_662n2")
-texture = ExtResource("5_qam81")
-
-[node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(-0.999832, 0, 0.0183423, 0, 1, 0, -0.0183423, 0, -0.999832, 12.7085, 0, 28.9211)
-material_override = SubResource("StandardMaterial3D_u1kmj")
-texture = ExtResource("5_qam81")
-
 [node name="Sprite3D4" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.57403, -7.56336, -12.2483)
 billboard = 2
 texture = ExtResource("5_qam81")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.3172)
+billboard = 1
+texture = ExtResource("1_s5ilx")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.34, 0, 32.3172)
+billboard = 1
+texture = ExtResource("1_s5ilx")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4162, 0, 32.3172)
+billboard = 1
+texture = ExtResource("1_s5ilx")

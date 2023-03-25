@@ -38,6 +38,7 @@ material_override = SubResource("StandardMaterial3D_ivco5")
 mesh = SubResource("CapsuleMesh_golbd")
 
 [node name="Agent" type="NavigationAgent3D" parent="."]
+ignore_y = false
 debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0.313726, 0.6, 0.917647, 1)

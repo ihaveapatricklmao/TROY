@@ -45,9 +45,10 @@ func _physics_process(delta):
 	
 	global_rotation_degrees = current_target.global_rotation_degrees
 	
-	if Agent.is_target_reachable() == false:
+	if not Agent.is_target_reachable():
 		if is_on_floor() == true:
-			velocity.y += jump_power * delta
+			print(velocity.y)
+			velocity.y = jump_power
 	
 	
 	velocity = (next_path - global_position).normalized() * speed*100 * delta

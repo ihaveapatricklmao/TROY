@@ -5,3 +5,5 @@ res://Player.gd
 res://playerstuff/Player.tscn
 res://enemies/Chaser.tscn
 res://maps/World.tscn
+res://playerstuff/Player.gd
+res://enemies/Chaser.gd

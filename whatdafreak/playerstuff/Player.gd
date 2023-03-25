@@ -103,6 +103,7 @@ func _process(delta):
 	mouse_delta = Vector2()
 	
 
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative

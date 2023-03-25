@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bld06clgnqeuy"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_qqs3u"]
+[ext_resource type="Texture2D" path="res://troytrexture.PNG" id="2_dyvyu"]
+[ext_resource type="Texture2D" path="res://troy.PNG" id="3_jx0j4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7wj5b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b6gg"]
+albedo_texture = ExtResource("2_dyvyu")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_f46v0"]
+shading_mode = 0
+albedo_color = Color(0.972549, 0.717647, 0.0235294, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k15i1"]
+material = SubResource("ORMMaterial3D_f46v0")
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qqs3u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.10713, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_7wj5b")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69334, 0.27302)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+fov = 90.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.04552, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_1b6gg")
+mesh = SubResource("CapsuleMesh_k15i1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Troy" type="Sprite2D" parent="Control"]
+position = Vector2(90, 74)
+scale = Vector2(0.223636, 0.251724)
+texture = ExtResource("3_jx0j4")
+
+[node name="Troy2" type="Sprite2D" parent="Control"]
+position = Vector2(222, 75)
+scale = Vector2(0.223636, 0.251724)
+texture = ExtResource("3_jx0j4")
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.12
+autostart = true
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 3.5
+autostart = true
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

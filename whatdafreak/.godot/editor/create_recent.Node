@@ -1,2 +1,7 @@
+Label
+VBoxContainer
+MarginContainer
+ColorRect
+Control
 Timer
 Sprite3D

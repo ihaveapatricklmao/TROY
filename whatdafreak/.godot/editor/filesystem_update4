@@ -2,3 +2,5 @@ res://World.tscn
 res://Player.tscn
 res://Chaser.tscn
 res://Player.gd
+res://playerstuff/Player.tscn
+res://enemies/Chaser.tscn

@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://odi2kmxpmm1"]
 
-[ext_resource type="PackedScene" uid="uid://dwroi42luyie5" path="res://Player.tscn" id="1_xxcys"]
-[ext_resource type="PackedScene" uid="uid://6i0dupevpyv5" path="res://Chaser.tscn" id="2_f1mby"]
 [ext_resource type="Texture2D" uid="uid://060qx2psxl2h" path="res://icon.svg" id="3_0qrq7"]
+[ext_resource type="PackedScene" uid="uid://ca71u3tfsqkgj" path="res://playerstuff/Player.tscn" id="3_bwhxa"]
 [ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="4_2hndn"]
+[ext_resource type="PackedScene" uid="uid://ddeh5h5tss85c" path="res://enemies/Chaser.tscn" id="4_87oe3"]
 [ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.PNG" id="6_eggmi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_et41b"]
@@ -94,9 +94,6 @@ directional_shadow_max_distance = 107.0
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_et41b")
 
-[node name="Player" parent="NavigationRegion3D" instance=ExtResource("1_xxcys")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46251, -8.23596, 0.273005)
-
 [node name="GROUND" type="CharacterBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(5.28579, 0, 0, 0, 1, 0, 0, 0, 2.72571, 0, 0, 0)
 
@@ -109,9 +106,6 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GROUND"]
 transform = Transform3D(-13.4717, 0, 0, 0, 1, -8.67656e-08, 0, 1.67916e-06, 19.063, 0, -10.1205, 0)
 shape = SubResource("BoxShape3D_if8wj")
-
-[node name="Chaser" parent="NavigationRegion3D" instance=ExtResource("2_f1mby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8531, -7.13329, -8.27995)
 
 [node name="OBS" type="CharacterBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 9.27068, 0, -6.92482, 0)
@@ -126,9 +120,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 5.62438, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_g8jni")
 
-[node name="Chaser2" parent="NavigationRegion3D" instance=ExtResource("2_f1mby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4638, -7.13329, -8.27995)
-
 [node name="SLOPE" type="CharacterBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0275126, 0)
 
@@ -140,6 +131,12 @@ mesh = SubResource("PrismMesh_16fs0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/SLOPE"]
 transform = Transform3D(7.59743, 0, 0, 0, 1, 0, 0, 0, 4.33699, 14.316, -9.19084, 0)
 shape = SubResource("ConvexPolygonShape3D_yebk8")
+
+[node name="Player" parent="NavigationRegion3D" instance=ExtResource("3_bwhxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75887, -6.29319, -6.49662)
+
+[node name="Chaser" parent="NavigationRegion3D" instance=ExtResource("4_87oe3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0193, -7.17525, -7.65389)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k6lwp")

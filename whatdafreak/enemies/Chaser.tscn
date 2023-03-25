@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://6i0dupevpyv5"]
+[gd_scene load_steps=7 format=3 uid="uid://ddeh5h5tss85c"]
 
-[ext_resource type="Script" path="res://Chaser.gd" id="1_jh4n3"]
-[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_crrws"]
+[ext_resource type="Script" path="res://enemies/Chaser.gd" id="1_fqsfx"]
+[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_ebxfu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a0sbx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivco5"]
 albedo_color = Color(1, 0.2, 0.164706, 1)
-albedo_texture = ExtResource("2_crrws")
+albedo_texture = ExtResource("2_ebxfu")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qncsk"]
 shading_mode = 0
@@ -17,7 +17,7 @@ albedo_color = Color(0.972549, 0, 0.0235294, 1)
 material = SubResource("ORMMaterial3D_qncsk")
 
 [node name="Chaser" type="CharacterBody3D"]
-script = ExtResource("1_jh4n3")
+script = ExtResource("1_fqsfx")
 hp = 10
 max_hp = 10
 attack_type = "Attack2"

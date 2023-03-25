@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwroi42luyie5"]
+[gd_scene load_steps=8 format=3 uid="uid://ca71u3tfsqkgj"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_qqs3u"]
-[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_dyvyu"]
-[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.PNG" id="3_jx0j4"]
+[ext_resource type="Script" path="res://playerstuff/Player.gd" id="1_n5yej"]
+[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_swq4g"]
+[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.PNG" id="3_ewlya"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wj5b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b6gg"]
-albedo_texture = ExtResource("2_dyvyu")
+albedo_texture = ExtResource("2_swq4g")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_f46v0"]
 shading_mode = 0
@@ -17,7 +17,7 @@ albedo_color = Color(0.972549, 0.717647, 0.0235294, 1)
 material = SubResource("ORMMaterial3D_f46v0")
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_qqs3u")
+script = ExtResource("1_n5yej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.10713, 0, 0, 0, 1, 0, 0, 0)
@@ -44,12 +44,12 @@ offset_bottom = 40.0
 [node name="Troy" type="Sprite2D" parent="Control"]
 position = Vector2(90, 74)
 scale = Vector2(0.223636, 0.251724)
-texture = ExtResource("3_jx0j4")
+texture = ExtResource("3_ewlya")
 
 [node name="Troy2" type="Sprite2D" parent="Control"]
 position = Vector2(222, 75)
 scale = Vector2(0.223636, 0.251724)
-texture = ExtResource("3_jx0j4")
+texture = ExtResource("3_ewlya")
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.12

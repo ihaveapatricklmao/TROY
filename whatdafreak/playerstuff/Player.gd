@@ -34,24 +34,19 @@ var is_dashing = false
 var can_dash = true
 var stamina = 3
 
-#other vars
-var start_position = Vector3()
 
 func _ready():
-	start_position = global_transform.origin
 	StaminaTimer.start()
 
 func _physics_process(delta):
-	#check if the player has fallen off the map. If so, reset their position
-	if global_transform.origin.y < -70: 
-		global_transform.origin = start_position
-		velocity = Vector3()
+
 	# jump
 	if Input.is_action_just_pressed("ui_accept"):
 		if jumps_left != 0:
 			velocity.y = jump
 			jumps_left -= 1
 			
+		
 	var input_dir = Input.get_vector("moveleft", "moveright", "moveup", "movedown")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

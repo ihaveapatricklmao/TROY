@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdjybfhwv7b0j"]
+
+[ext_resource type="Script" path="res://buildings/Deathbox.gd" id="1_3ckmx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_viyl3"]
+
+[node name="Deathbox" type="Area3D"]
+script = ExtResource("1_3ckmx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(684.386, 0, 0, 0, 1.28972, 0, 0, 0, 731.521, 0, 0, 0)
+shape = SubResource("BoxShape3D_viyl3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

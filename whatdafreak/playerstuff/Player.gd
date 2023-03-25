@@ -32,7 +32,7 @@ const dash_duration = 0.01
 var dash_elapsed = 0.0
 var is_dashing = false
 var can_dash = true
-var stamina=3
+var stamina = 3
 
 #other vars
 var start_position = Vector3()

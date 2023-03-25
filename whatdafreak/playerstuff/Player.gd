@@ -1,16 +1,14 @@
 extends CharacterBody3D
 class_name PlayerClass
 
-
-
 @onready var JumpTimer = $JumpTimer
 @onready var DashTimer = $DashTimer
 @onready var StaminaTimer = $StaminaTimer
 # cam vars
 @onready var Head = $Head
 @onready var Cam = $Head/Camera3D
-var cam_tilt_power = 1
 
+var cam_tilt_power = 1
 var min_cam_angle : float = -90.0
 var max_cam_angle : float = 90.0
 var mouse_delta = Vector2()
@@ -36,11 +34,18 @@ var is_dashing = false
 var can_dash = true
 var stamina=3
 
+#other vars
+var start_position = Vector3()
 
 func _ready():
+	start_position = global_transform.origin
 	StaminaTimer.start()
 
 func _physics_process(delta):
+	#check if the player has fallen off the map. If so, reset their position
+	if global_transform.origin.y < -70: 
+		global_transform.origin = start_position
+		velocity = Vector3()
 	# jump
 	if Input.is_action_just_pressed("ui_accept"):
 		if jumps_left != 0:
@@ -78,7 +83,7 @@ func _physics_process(delta):
 			is_dashing = true
 			DashTimer.start()
 			stamina-=1
-			print(stamina)
+			print("stamina remaining: ", stamina)
 
 	if is_dashing:
 		can_dash = false
@@ -95,18 +100,13 @@ func _physics_process(delta):
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta
-	
 	move_and_slide()
 
 func _process(delta):
 	Head.rotation_degrees.x -= mouse_delta.y * sense * delta
-	
 	Head.rotation_degrees.x = clamp(Head.rotation_degrees.x, min_cam_angle, max_cam_angle)
-	
 	rotation_degrees.y -= mouse_delta.x * sense * delta
-	
 	Head.rotation_degrees.y = clamp(Head.rotation_degrees.y, min_cam_angle, max_cam_angle)
-	
 	mouse_delta = Vector2()
 	
 
@@ -114,10 +114,9 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
+#timers
 func _on_jump_timer_timeout():
 	if is_on_floor():
 		jumps_left = 2

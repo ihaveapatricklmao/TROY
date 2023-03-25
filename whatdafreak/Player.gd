@@ -2,7 +2,9 @@ extends CharacterBody3D
 class_name PlayerClass
 
 
+
 @onready var JumpTimer = $JumpTimer
+@onready var DashTimer = $DashTimer
 # cam vars
 @onready var Head = $Head
 @onready var Cam = $Head/Camera3D
@@ -22,7 +24,12 @@ var hp = 100
 const max_hp = 150
 var armour = 0
 const max_armour = 100
-var dash_power = 1 #speed multiplier for dashes
+
+var dash_speed = 1.0
+const dash_target_speed = 3.0
+const dash_duration = 0.05
+var dash_elapsed = 0.0
+var is_dashing = false
 
 
 func _physics_process(delta):
@@ -32,8 +39,6 @@ func _physics_process(delta):
 			velocity.y = jump
 			jumps_left -= 1
 			
-		
-	
 	var input_dir = Input.get_vector("moveleft", "moveright", "moveup", "movedown")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -57,19 +62,24 @@ func _physics_process(delta):
 		if Cam.rotation.z < 0:
 			Cam.rotate_z(deg_to_rad(cam_tilt_power * 0.5))
 			
-		
-	
-
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
 
 	# dash 
-	
-	if Input.is_action_just_pressed("dash"):
-		dash_power = 15
-		velocity.x = direction.x *speed*dash_power
-		velocity.z = direction.z *speed*dash_power
+	if Input.is_action_just_pressed("dash") and not DashTimer.is_stopped():
+		is_dashing = true
+		DashTimer.start()
+
+	if is_dashing:
+		dash_elapsed += delta
+		dash_speed = lerp(1.0, dash_target_speed, dash_elapsed / dash_duration)
+		if dash_elapsed >= dash_duration:
+			is_dashing = false
+			dash_elapsed = 0.0
 	else:
-		dash_power = 1
+		dash_speed = lerp(dash_speed, 1.0, 0.1)
+
+	velocity.x = direction.x * speed * dash_speed
+	velocity.z = direction.z * speed * dash_speed
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta

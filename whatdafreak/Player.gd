@@ -27,9 +27,9 @@ const max_armour = 100
 
 # dash vars
 
-var dash_speed = 1.0
-const dash_target_speed = 3.0
-const dash_duration = 0.05
+var dash_speed = 0.5
+const dash_target_speed = 4.5
+const dash_duration = 0.01
 var dash_elapsed = 0.0
 var is_dashing = false
 var can_dash = true

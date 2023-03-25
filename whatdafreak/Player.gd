@@ -6,7 +6,7 @@ class_name PlayerClass
 # cam vars
 @onready var Head = $Head
 @onready var Cam = $Head/Camera3D
-var cam_tilt_power = 1.3
+var cam_tilt_power = 1
 
 var min_cam_angle : float = -90.0
 var max_cam_angle : float = 90.0
@@ -56,6 +56,9 @@ func _physics_process(delta):
 	if not Input.is_action_pressed("moveright"):
 		if Cam.rotation.z < 0:
 			Cam.rotate_z(deg_to_rad(cam_tilt_power * 0.5))
+			
+		
+	
 
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
 
@@ -93,6 +96,5 @@ func _input(event):
 
 
 func _on_jump_timer_timeout():
-	print("can double jump now")
 	if is_on_floor():
 		jumps_left = 2

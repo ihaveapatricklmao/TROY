@@ -4,3 +4,4 @@ res://Chaser.tscn
 res://Player.gd
 res://playerstuff/Player.tscn
 res://enemies/Chaser.tscn
+res://maps/World.tscn

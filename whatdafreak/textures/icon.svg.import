@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4tyhwgdylp8c"
-path.s3tc="res://.godot/imported/troytrexture.PNG-edd89caa88db97d314dd298896ae4c3e.s3tc.ctex"
+uid="uid://060qx2psxl2h"
+path.s3tc="res://.godot/imported/icon.svg-3540dd99eafb6c4e602e8c59cee418fa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://troytrexture.PNG"
-dest_files=["res://.godot/imported/troytrexture.PNG-edd89caa88db97d314dd298896ae4c3e.s3tc.ctex"]
+source_file="res://textures/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-3540dd99eafb6c4e602e8c59cee418fa.s3tc.ctex"]
 
 [params]
 
@@ -33,3 +33,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

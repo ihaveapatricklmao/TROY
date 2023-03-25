@@ -1,13 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ca71u3tfsqkgj"]
+[gd_scene load_steps=8 format=3 uid="uid://bjyrsonhs6mxp"]
 
 [ext_resource type="Script" path="res://playerstuff/Player.gd" id="1_n5yej"]
-[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://troytrexture.PNG" id="2_swq4g"]
-[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://troy.PNG" id="3_ewlya"]
+[ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://textures/troytrexture.PNG" id="2_0lmbp"]
+[ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://textures/troy.PNG" id="3_hr3gc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7wj5b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b6gg"]
-albedo_texture = ExtResource("2_swq4g")
+albedo_texture = ExtResource("2_0lmbp")
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_f46v0"]
 shading_mode = 0
@@ -44,12 +44,12 @@ offset_bottom = 40.0
 [node name="Troy" type="Sprite2D" parent="Control"]
 position = Vector2(90, 74)
 scale = Vector2(0.223636, 0.251724)
-texture = ExtResource("3_ewlya")
+texture = ExtResource("3_hr3gc")
 
 [node name="Troy2" type="Sprite2D" parent="Control"]
 position = Vector2(222, 75)
 scale = Vector2(0.223636, 0.251724)
-texture = ExtResource("3_ewlya")
+texture = ExtResource("3_hr3gc")
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.12

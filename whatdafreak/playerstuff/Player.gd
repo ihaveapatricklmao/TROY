@@ -5,6 +5,7 @@ class_name PlayerClass
 
 @onready var JumpTimer = $JumpTimer
 @onready var DashTimer = $DashTimer
+@onready var StaminaTimer = $StaminaTimer
 # cam vars
 @onready var Head = $Head
 @onready var Cam = $Head/Camera3D
@@ -33,7 +34,11 @@ const dash_duration = 0.01
 var dash_elapsed = 0.0
 var is_dashing = false
 var can_dash = true
+var stamina=3
 
+
+func _ready():
+	StaminaTimer.start()
 
 func _physics_process(delta):
 	# jump
@@ -68,10 +73,12 @@ func _physics_process(delta):
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
 
 	# dash 
-	if Input.is_action_just_pressed("dash") and not DashTimer.is_stopped():
+	if Input.is_action_just_pressed("dash") and not DashTimer.is_stopped() and stamina>0:
 		if can_dash == true:
 			is_dashing = true
 			DashTimer.start()
+			stamina-=1
+			print(stamina)
 
 	if is_dashing:
 		can_dash = false
@@ -118,3 +125,8 @@ func _on_jump_timer_timeout():
 
 func _on_dash_timer_timeout():
 	can_dash = true
+
+
+func _on_stamina_timer_timeout():
+	if stamina < 3:
+		stamina += 1

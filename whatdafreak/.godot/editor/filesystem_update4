@@ -1,9 +1,5 @@
-res://World.tscn
-res://Player.tscn
-res://Chaser.tscn
-res://Player.gd
+res://maps/World.tscn
 res://playerstuff/Player.tscn
 res://enemies/Chaser.tscn
-res://maps/World.tscn
 res://playerstuff/Player.gd
 res://enemies/Chaser.gd

@@ -47,7 +47,7 @@ func _physics_process(delta):
 	
 	if not Agent.is_target_reachable():
 		if is_on_floor() == true:
-			print(velocity.y)
+			#print(velocity.y)
 			velocity.y = jump_power
 	
 	

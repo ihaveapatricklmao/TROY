@@ -25,6 +25,8 @@ const max_hp = 150
 var armour = 0
 const max_armour = 100
 
+# dash vars
+
 var dash_speed = 1.0
 const dash_target_speed = 3.0
 const dash_duration = 0.05

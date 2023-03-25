@@ -56,7 +56,8 @@ wait_time = 0.12
 autostart = true
 
 [node name="DashTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 3.5
 autostart = true
 
 [connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

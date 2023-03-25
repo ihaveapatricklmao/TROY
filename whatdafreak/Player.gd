@@ -32,6 +32,7 @@ const dash_target_speed = 3.0
 const dash_duration = 0.05
 var dash_elapsed = 0.0
 var is_dashing = false
+var can_dash = true
 
 
 func _physics_process(delta):
@@ -68,10 +69,12 @@ func _physics_process(delta):
 
 	# dash 
 	if Input.is_action_just_pressed("dash") and not DashTimer.is_stopped():
-		is_dashing = true
-		DashTimer.start()
+		if can_dash == true:
+			is_dashing = true
+			DashTimer.start()
 
 	if is_dashing:
+		can_dash = false
 		dash_elapsed += delta
 		dash_speed = lerp(1.0, dash_target_speed, dash_elapsed / dash_duration)
 		if dash_elapsed >= dash_duration:
@@ -110,3 +113,7 @@ func _input(event):
 func _on_jump_timer_timeout():
 	if is_on_floor():
 		jumps_left = 2
+
+
+func _on_dash_timer_timeout():
+	can_dash = true

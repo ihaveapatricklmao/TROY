@@ -18,7 +18,7 @@ var sense = 8.0
 const speed = 25.0
 var jumps_left = 2
 const jump = 15.5
-const gravity = 30.0
+var gravity = 30.0
 var hp = 100
 const max_hp = 150
 var armour = 0
@@ -33,6 +33,10 @@ var dash_elapsed = 0.0
 var is_dashing = false
 var can_dash = true
 var stamina = 3
+
+# other vars
+
+var wall_jumps_left = 3
 
 
 func _ready():
@@ -71,7 +75,11 @@ func _physics_process(delta):
 			Cam.rotate_z(deg_to_rad(cam_tilt_power * 0.5))
 			
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
-
+	
+	if is_on_wall():
+		gravity = 17.5
+	else:
+		gravity = 30.0
 	# dash 
 	if Input.is_action_just_pressed("dash") and not DashTimer.is_stopped() and stamina>0:
 		if can_dash == true:

@@ -1,8 +1,2 @@
 res://maps/World.tscn
-res://enemies/Chaser.gd
-res://playerstuff/Player.tscn
-res://enemies/Chaser.tscn
 res://playerstuff/Player.gd
-res://buildings/Deathbox.tscn
-res://buildings/Deathbox.gd
-res://buildings/SendPoint.tscn

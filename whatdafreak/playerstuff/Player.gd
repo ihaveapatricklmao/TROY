@@ -77,7 +77,7 @@ func _physics_process(delta):
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
 	
 	if is_on_wall():
-		gravity = 17.5
+		gravity = 13.5
 	else:
 		gravity = 30.0
 	# dash 

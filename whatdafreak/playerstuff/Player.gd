@@ -36,7 +36,7 @@ var stamina = 3
 
 # other vars
 
-var wall_jumps_left = 3
+var wall_jumps_left = 2
 
 
 func _ready():
@@ -78,8 +78,12 @@ func _physics_process(delta):
 	
 	if is_on_wall():
 		gravity = 8.5
+		if !jumps_left == 0:
+			jumps_left += 1
+			wall_jumps_left -= 1
 	else:
 		gravity = 30.0
+		wall_jumps_left = 2
 	# dash 
 	if Input.is_action_just_pressed("dash") and not DashTimer.is_stopped() and stamina>0:
 		if can_dash == true:

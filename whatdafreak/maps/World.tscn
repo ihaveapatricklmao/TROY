@@ -134,7 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.8028, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.241, 0, 0)
 
 [node name="OBS2" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(-0.169281, 0, -9.13688, 0, 2.37941, 0, 0.985568, 0, -1.56935, 0, -3.29326, -20.5788)
+transform = Transform3D(-0.169281, 0, -9.13688, 0, 6.64462, 0, 0.985568, 0, -1.56935, 0, 6.45401, -20.5788)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/OBS2"]
 transform = Transform3D(1, 0, 0, 0, -5.63379, 0, 0, 0, 1, 0, 0, 0)

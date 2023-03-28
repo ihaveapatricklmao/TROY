@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://b74odrsbe3qxy"]
+[gd_scene load_steps=25 format=3 uid="uid://b74odrsbe3qxy"]
 
 [ext_resource type="Texture2D" uid="uid://4tyhwgdylp8c" path="res://textures/troytrexture.PNG" id="1_s5ilx"]
 [ext_resource type="Texture2D" uid="uid://060qx2psxl2h" path="res://textures/icon.svg" id="2_h8cor"]
 [ext_resource type="PackedScene" uid="uid://bjyrsonhs6mxp" path="res://playerstuff/Player.tscn" id="3_6ox72"]
-[ext_resource type="PackedScene" uid="uid://csjpobc3wkswx" path="res://enemies/Chaser.tscn" id="4_arqdi"]
 [ext_resource type="Texture2D" uid="uid://m7jsggat66dh" path="res://textures/troy.PNG" id="5_qam81"]
 [ext_resource type="PackedScene" uid="uid://pmb6wollcf1p" path="res://buildings/SendPoint.tscn" id="6_ixgfo"]
 [ext_resource type="PackedScene" uid="uid://bdjybfhwv7b0j" path="res://buildings/Deathbox.tscn" id="6_yv76n"]
@@ -128,13 +127,11 @@ shape = SubResource("ConvexPolygonShape3D_yebk8")
 [node name="Player" parent="NavigationRegion3D" instance=ExtResource("3_6ox72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75887, -6.29319, -6.49662)
 
-[node name="Chaser" parent="NavigationRegion3D" instance=ExtResource("4_arqdi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9904, -7.17525, -7.65389)
-
 [node name="Deathbox" parent="NavigationRegion3D" instance=ExtResource("6_yv76n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.8028, 0)
 
 [node name="SendPoint" parent="NavigationRegion3D" instance=ExtResource("6_ixgfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.241, 0, 0)
 
 [node name="OBS2" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(-0.169281, 0, -9.13688, 0, 2.37941, 0, 0.985568, 0, -1.56935, 0, -3.29326, -20.5788)

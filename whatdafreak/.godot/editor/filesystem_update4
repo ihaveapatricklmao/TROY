@@ -1,2 +1,5 @@
 res://maps/World.tscn
+res://enemies/Chaser.gd
 res://playerstuff/Player.gd
+res://enemies/Chaser.tscn
+res://playerstuff/Player.tscn

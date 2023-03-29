@@ -76,6 +76,7 @@ func _physics_process(delta):
 			
 	Cam.rotation.z = clamp(Cam.rotation.z , -0.05, 0.05)
 	
+	# wall jump
 	if is_on_wall():
 		gravity = 8.5
 		if !jumps_left == 0:
@@ -84,6 +85,7 @@ func _physics_process(delta):
 				wall_jumps_left -= 1
 	else:
 		gravity = 30.0
+	
 	if is_on_floor():
 		wall_jumps_left = 2
 	
